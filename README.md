@@ -9,7 +9,7 @@ https://docs.spring.io/spring-batch/docs/4.2.1.RELEASE/api
 
 问题记录
 
-1、在processor中，如果要调用时传进来的参数，例如“createTime”，需要通过JobParameters 来传值和获取。详细见4.3数据处理Processor和4.5调用Job
+1、在processor中，如果要使用调用时传进来的参数，例如“createTime”，需要通过JobParameters 来传值和获取。详细见4.3数据处理Processor和4.5调用Job
 
 2、如果文件中出现空行，在processor中进行判断，如果读取的对象属性全为null，直接return null即可。
 
