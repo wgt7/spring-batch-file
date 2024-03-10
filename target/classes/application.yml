@@ -1,0 +1,28 @@
+server:
+  # 服务器的HTTP端口，默认为80
+  port: 8081
+
+# MyBatis
+mybatis:
+  # 搜索指定包别名
+  typeAliasesPackage: com.wuxian.**.entity
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+
+# 数据源配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    druid:
+      # 主库数据源
+      url: jdbc:mysql://localhost:3306/springbatchtest?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+      username: root
+      password: 123456
+  #批处理设置
+  batch:
+    job:
+      # 设置为false，用jobLauncher.run执行
+      enabled: false
+    # 总是生成相关的batch框架使用到的数据库表，第一次使用always，后续可以使用never
+    initialize-schema: always
